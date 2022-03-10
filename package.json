@@ -1,0 +1,33 @@
+{
+	"name": "senior",
+	"version": "1.0.0",
+	"description": "Elias Lichaa el Khoury and Mickel el Khoury's senior project",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "nodemon app.js"
+	},
+	"author": "BananaCode.xyz",
+	"license": "ISC",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"connect-multiparty": "^2.2.0",
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.2",
+		"express-openid-connect": "^2.5.2",
+		"helmet": "^4.6.0",
+		"joi": "^17.5.0",
+		"jsonwebtoken": "^8.5.1",
+		"mkdirp": "^1.0.4",
+		"moment": "^2.29.1",
+		"mongoose": "^6.1.2",
+		"morgan": "^1.10.0",
+		"nodemailer": "^6.7.2",
+		"pdf-parse": "^1.1.1",
+		"simple-resume-parser": "^1.1.8",
+		"socket.io": "^4.4.1",
+		"tape": "^5.5.2",
+		"uuid": "^8.3.2"
+	}
+}

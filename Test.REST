@@ -1,0 +1,53 @@
+// Health Check
+GET http://localhost:9900/ HTTP/1.1
+
+###
+// Login Route
+POST http://localhost:9900/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email":"elias_lichaa@outlook.com",
+    "password":"secret123!",
+    "type":"JobSeeker"
+}
+
+###
+// Register Route
+POST http://localhost:9900/auth/register HTTP/1.1
+content-type: application/json
+
+{
+    "email":"elias_lichaa@outlook.com",
+    "password":"secret123!",
+    "type":"JobSeeker",
+    "gender":"male",
+    "dob":"1994-10-04",
+    "name":"Elias Lichaa El Khoury"
+}
+
+###
+// Get Me Profile
+GET http://localhost:9900/jobSeeker/profile HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRWxpYXMgTGljaGFhIGVsIEtob3VyeSIsImVtYWlsIjoiZWxpYXNfbGljaGFhQG91dGxvb2suY29tIiwidHlwZSI6IkpvYlNlZWtlciIsImlkIjoiNjIwNTViNmU0MmRhZTc5ZmMwMjI5NDc0IiwiaWF0IjoxNjQ0NTI0Mjk4LCJleHAiOjE2NDcxMTYyOTh9.Rhb7JP8GUB4LeaeiWpsdwq2YMtGQtodsoMrv3bHczUg
+
+###
+// Personality Test
+POST http://localhost:9900/jobSeeker/personalityTest HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRWxpYXMgTGljaGFhIEVsIEtob3VyeSIsImVtYWlsIjoiZWxpYXNfbGljaGFhQG91dGxvb2suY29tIiwidHlwZSI6IkpvYlNlZWtlciIsImlkIjoiNjFkZjJkMTE3NTQxYzEzZjQ3YTQ3MzI0IiwiaWF0IjoxNjQyMDI1MjcyLCJleHAiOjE2NDQ2MTcyNzJ9.PKiRZWsHzOe1FUtjXQb7wBeeun4M30hdV5eo6NJ0X88
+Content-Type: application/json
+
+{
+    "answers":[{"1":"A"},{"2":"B"},{"3":"A"}]
+}
+
+###
+// PDF Parsing
+POST http://localhost:9900/jobSeeker/pdfRead HTTP/1.1
+Authorization: Brearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRWxpYXMgTGljaGFhIEVsIEtob3VyeSIsImVtYWlsIjoiZWxpYXNfbGljaGFhQG91dGxvb2suY29tIiwidHlwZSI6IkpvYlNlZWtlciIsImlkIjoiNjFkZjJkMTE3NTQxYzEzZjQ3YTQ3MzI0IiwiaWF0IjoxNjQyMDI1MjcyLCJleHAiOjE2NDQ2MTcyNzJ9.PKiRZWsHzOe1FUtjXQb7wBeeun4M30hdV5eo6NJ0X88
+Content-Type: multipart/form-data
+
+// TODO: In login if status = 333 redirect to a page with button that says "resend verification email, i will give his email through the url"
+// ${process.env.FRONT_END_URL}/register/resend/${email}
+// TODO: this is the link of the verification 
+// ${process.env.FRONT_END_URL}/register/verify/${validateToken}
