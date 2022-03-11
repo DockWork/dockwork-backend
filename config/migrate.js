@@ -87,19 +87,27 @@ const fillDbWithFixedTestData = async () => {
         language: 'Javascript',
         level: 1,
         description:
-          'function test(params){\n// body\n}\n\nJust write the body in the editor',
+          'function greeting(params){\n// body\n}\n\nJust write the body in the editor',
         question: [
           {
-            title: `<div class="title">Task</div>`,
-            body: `<div class="body">This is the body of Task</div>`,
+            title: `<div class="title">Information</div>`,
+            body: `<div class="body">In this test you are asked to return the name entered as a parameter in the function</div>`,
+          },
+          {
+            title: `<div class="title">Input type</div>`,
+            body: `<div class="body">(params) String</div>`,
+          },
+          {
+            title: `<div class="title">Example</div>`,
+            body: `<div class="body">john ==> function ==> "Hello john"</div>`,
           },
         ],
         testCasesCounter: 3,
         input: JSON.stringify(['John Doe', 'Jane Doe', 'John Smith']),
         result: JSON.stringify([
-          'Hello John Doe!',
-          'Hello Jane Doe!',
-          'Hello John Smith!',
+          'Hello John Doe',
+          'Hello Jane Doe',
+          'Hello John Smith',
         ]),
       },
     ])
@@ -107,18 +115,6 @@ const fillDbWithFixedTestData = async () => {
     console.log(err)
   }
 }
-
-const test = async () => {
-  try {
-    await Skill.create({
-      skills: { Javascript: 0, Cpp: 0 },
-    })
-  } catch (err) {
-    console.log(err)
-  }
-}
-
-// test()
 
 // fillDbWithFixedTestData()
 // fillDbWithFixedPersonalityData()

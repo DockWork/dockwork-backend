@@ -46,8 +46,3 @@ Content-Type: application/json
 POST http://localhost:9900/jobSeeker/pdfRead HTTP/1.1
 Authorization: Brearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRWxpYXMgTGljaGFhIEVsIEtob3VyeSIsImVtYWlsIjoiZWxpYXNfbGljaGFhQG91dGxvb2suY29tIiwidHlwZSI6IkpvYlNlZWtlciIsImlkIjoiNjFkZjJkMTE3NTQxYzEzZjQ3YTQ3MzI0IiwiaWF0IjoxNjQyMDI1MjcyLCJleHAiOjE2NDQ2MTcyNzJ9.PKiRZWsHzOe1FUtjXQb7wBeeun4M30hdV5eo6NJ0X88
 Content-Type: multipart/form-data
-
-// TODO: In login if status = 333 redirect to a page with button that says "resend verification email, i will give his email through the url"
-// ${process.env.FRONT_END_URL}/register/resend/${email}
-// TODO: this is the link of the verification 
-// ${process.env.FRONT_END_URL}/register/verify/${validateToken}
