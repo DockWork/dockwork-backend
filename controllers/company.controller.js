@@ -256,7 +256,11 @@ module.exports = {
 			await sendEmail({
 				email: user.email,
 				subject: 'New Meeting Request',
-				message: `Dear ${user.name}, you have received a new meeting request please follow this link to respond ${process.env.FRONT_END_URL}/js/notification/2`,
+				message: `Dear ${
+					user.name
+				}, you have received a new meeting request please follow this link to respond ${
+					process.env.URL || 'http://localhost:9901'
+				}/js/notification/2`,
 			})
 
 			await Notification.create({

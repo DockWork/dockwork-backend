@@ -64,7 +64,7 @@ const errorCatcher = require('./middlewares/errorCatcher.middleware')
 app.use(errorCatcher)
 
 // Initializing app
-const port = process.env.APP_PORT || 9900
+const port = process.env.PORT || 9901
 const appServer = app.listen(port, () => {
 	console.log(`Server started on ${port}`)
 })
