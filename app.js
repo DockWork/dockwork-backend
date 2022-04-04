@@ -21,13 +21,15 @@ app.use(cors())
 
 // Static Route
 app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'dist')))
 
 // Health Check
 app.get('/', (_, res) => {
-	res.status(200).json({
-		message:
-			"Welcome to Elias Lichaa el Khoury and Mickel el Khoury's senior project",
-	})
+	res.sendFile(path.join(__dirname, 'dist', 'index.html'))
+	// res.status(200).json({
+	// 	message:
+	// 		"Welcome to Elias Lichaa el Khoury and Mickel el Khoury's senior project",
+	// })
 })
 
 // Socket Server
